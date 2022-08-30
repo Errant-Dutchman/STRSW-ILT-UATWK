@@ -6,11 +6,13 @@ metadata:
     storage.k8s.io/name: nfs
 spec:
   accessModes:
-    - ReadWriteOnce
-    - ReadOnlyMany
     - ReadWriteMany
   capacity:
     storage: 1Gi
   storageClassName: ""
   persistentVolumeReclaimPolicy: Recycle
   volumeMode: Filesystem
+  nfs: 
+    server: 192.168.0.31
+    path: /nfs
+    readOnly: false
